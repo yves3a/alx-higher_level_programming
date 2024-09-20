@@ -2,7 +2,7 @@
 import sys
 
 if __name__ == "__main__":
-    argv = sys.argv[1:] # list of arg excluding script name
+    argv = sys.argv[1:]  # list of arg excluding script name
     a = len(argv)
 
     if a == 0:
@@ -13,4 +13,4 @@ if __name__ == "__main__":
         print("{} arguments:".format(a))
 
     for i in range(1, a + 1):
-            print("{}: {}".format(i, sys.argv[i]))
+        print("{}: {}".format(i, sys.argv[i]))
