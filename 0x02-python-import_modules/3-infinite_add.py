@@ -9,5 +9,5 @@ if __name__ == "__main__":
     for i in argv:
         result += int(i)
 
-    #print the final result
+    # print the final result
     print("{}".format(result))
