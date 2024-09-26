@@ -10,4 +10,3 @@ def print_matrix_integer(matrix=[[]]):
                 else:
                     print("{:d}".format(row[i]), end="")
             print()  # Move to the next line after each row
-
