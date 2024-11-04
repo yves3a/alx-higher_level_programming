@@ -1,7 +1,7 @@
-#!/usr/bin/pytho3
+#!/usr/bin/python3
 """
 Module 0_square
-defines an empty class square.
+Defines an empty class square.
 """
 
 class Square:
