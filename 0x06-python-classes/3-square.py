@@ -4,6 +4,7 @@ Module 2-square
 Defines a Square class with a private instance attribute size.
 """
 
+
 class Square:
     """A class that defines a square with a private size attribute."""
 
