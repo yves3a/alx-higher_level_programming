@@ -10,6 +10,8 @@ class Node:
 
     def __init__(self, data, next_node=None):
         """Initailises a class """
+        self.__data = None
+        self.__next_node = None
         self.data = data
         self.next_node = next_node
 
@@ -29,7 +31,7 @@ class Node:
         TypeError, if data is not int
         """
         if not isinstance(value, int):
-            raise TypeError("data must be integer")
+            raise TypeError("data must be an integer")
         self.__data = value
 
     @property
@@ -46,31 +48,19 @@ class Node:
 
 
 class SinglyLinkedList:
-    """
-    Class that defines a singly linked list.
+    """Class that defines a singly linked list."""
 
-    Attributes:
-        __head: Private instance attribute representing the head of the list
-    """
     def __init__(self):
-        """
-        Initialize an empty singly linked list.
-        """
+        """Initialize an empty singly linked list."""
         self.__head = None
 
     def sorted_insert(self, value):
-        """
-        Insert a new Node into the correct sorted position in the list.
-
-        Args:
-            value: The value to insert into the list
-        """
+        """Insert a new Node into the correct sorted position in the list."""
         new_node = Node(value)
         if self.__head is None or self.__head.data >= value:
             new_node.next_node = self.__head
             self.__head = new_node
             return
-
         current = self.__head
         while current.next_node is not None and current.next_node.data < value:
             current = current.next_node
@@ -78,15 +68,10 @@ class SinglyLinkedList:
         current.next_node = new_node
 
     def __str__(self):
-        """
-        String representation of the linked list.
-
-        Returns:
-            str: String representation of the list with one node number a line
-        """
+        """Define the print() representation of a SinglyLinkedList."""
         values = []
         current = self.__head
         while current is not None:
             values.append(str(current.data))
             current = current.next_node
-        return "\n".join(values)
+        return '\n'.join(values)
