@@ -1,6 +1,9 @@
 #!/usr/bin/python3
+from 0-add_integer import add_integer
 
-Addition Tests for add_integer function
+"""Tests for the add_integer function"""
+
+Addition Tests
 =============
 
 Integers
@@ -32,3 +35,24 @@ TypeError: a must be an integer
 >>> add_integer(4, "School")
 Traceback (most recent call last):
 TypeError: b must be an integer
+
+Documentation
+-------------
+>>> print(add_integer.__doc__)
+Adds two integers.
+    
+    Args:
+        a (int or float): The first number to add.
+        b (int or float, optional): The second number to add. Defaults to 98.
+    
+    Raises:
+        TypeError: If `a` or `b` is not an integer or float.
+    
+    Returns:
+        int: The sum of `a` and `b`.
+>>> print(__import__("0-add_integer").__doc__)
+Adds two integers.
+
+This module provides a function `add_integer` that takes two numbers (either integers or floats) and returns their sum as an integer.
+
+If either `a` or `b` is not an integer or float, a `TypeError` is raised with an appropriate message.
