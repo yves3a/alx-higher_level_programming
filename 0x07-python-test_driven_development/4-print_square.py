@@ -8,7 +8,7 @@ def print_square(size):
     """
     Function that prints a square with the character #
     Args:
-        size: size of the square
+        size: size length of the square
     Raises:
         TypeError: If size is not an integer
         ValueError: If size is less than 0
