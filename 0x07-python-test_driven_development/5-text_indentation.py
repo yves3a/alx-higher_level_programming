@@ -12,25 +12,18 @@ def text_indentation(text):
     Raises:
         TypeError: If text is not a string
     """
-
     if not isinstance(text, str):
         raise TypeError("text must be a string")
-    
+
+    text = text.strip()
     i = 0
     while i < len(text):
-        # Skip spaces at the beginning of the text
-        if text[i] == " " and i == 0:
-            i += 1
-            continue
-        # Skip spaces after . ? and :
-        if i > 0 and text[i] == " " and text[i - 1] in ".?:":
-            i += 1
-            continue
-        
-        #
-        print(text[i], end="")
-
-        # Print 2 new lines after . ? and : 
         if text[i] in ".?:":
+            print(text[i], end="")
             print("\n")
-        i += 1
+            i += 1
+            while i < len(text) and text[i] == ' ':
+                i += 1
+        else:
+            print(text[i], end="")
+            i += 1
