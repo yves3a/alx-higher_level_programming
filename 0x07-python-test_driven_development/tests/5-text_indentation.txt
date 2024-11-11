@@ -1,0 +1,53 @@
+"""
+Module that prints a text with 2 new lines after . ? and :
+"""
+
+text_indentation = __import__('5-text_indentation').text_indentation
+
+# Basic usage with period
+>>> text_indentation("Hello. World")
+Hello.
+<BLANKLINE>
+World
+
+# Multiple special characters
+>>> text_indentation("Hello? How are you: I am fine. Thanks")
+Hello?
+<BLANKLINE>
+How are you:
+<BLANKLINE>
+I am fine.
+<BLANKLINE>
+Thanks
+
+# Text without special characters
+>>> text_indentation("Hello World")
+Hello World
+
+# Empty string
+>>> text_indentation("")
+
+# Multiple spaces around special characters
+>>> text_indentation("Hello   .   World")
+Hello.
+<BLANKLINE>
+World
+
+# Non-string input
+>>> text_indentation(12)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+
+# Multiple consecutive special characters
+>>> text_indentation("Hi..?:World")
+Hi.
+<BLANKLINE>
+.
+<BLANKLINE>
+?
+<BLANKLINE>
+:
+<BLANKLINE>
+World
+
