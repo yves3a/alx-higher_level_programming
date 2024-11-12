@@ -4,6 +4,7 @@
 import unittest
 max_integer = __import__('6-max_integer').max_integer
 
+
 class TestMaxInteger(unittest.TestCase):
     """Class to test the max_integer function"""
 
@@ -47,6 +48,7 @@ class TestMaxInteger(unittest.TestCase):
         """Test that the function raises TypeError for mixed types"""
         with self.assertRaises(TypeError):
             max_integer([1, 'b', 3])
+
 
 if __name__ == '__main__':
     unittest.main()
