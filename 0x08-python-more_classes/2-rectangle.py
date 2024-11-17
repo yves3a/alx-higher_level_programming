@@ -7,7 +7,7 @@ class Rectangle:
     def __init__(self, width=0, height=0):
         """Initialising a rectangle"""
         self.width = width
-        self.height = height if height is not None else 0
+        self.height = height
 
     @property
     def width(self):
@@ -52,3 +52,4 @@ class Rectangle:
             return 0
         else:
             return 2 * (self.__width + self.__height)
+        if self.__width and self.__height else 0
