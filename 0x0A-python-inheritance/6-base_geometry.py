@@ -3,6 +3,7 @@
 Represents a class BaseGeometry
 """
 
+
 class BaseGeometry:
     """
     A class raises an exception
@@ -10,6 +11,6 @@ class BaseGeometry:
 
     def area(self):
         """
-        Raises an exception 
+        Raises an exception
         """
         raise Exception(" area() is not implemented ")
