@@ -1,41 +1,85 @@
-=====================================================================
-BaseGeometry class:
-=====================================================================
+"""
+Represents class BaseGeometry
+"""
 
----------------------------------------------------------------------
-Case 1: Instantiating the class
----------------------------------------------------------------------
 
-    >>> BaseGeometry = __import__('base_geometry').BaseGeometry
-    >>> bg = BaseGeometry()
+class BaseGeometry:
+    """
+    A class that raises an exception
+    """
 
----------------------------------------------------------------------
-Case 2: Calling the area method
----------------------------------------------------------------------
+    def area(self):
+        """
+        Define a method area
 
-    >>> bg.area()
-    Traceback (most recent call last):
-    ...
-    Exception: area() is not implemented
+        Raises:
+            Exception: if area is not implemented
 
----------------------------------------------------------------------
-Case 3: Validating integers with integer_validator
----------------------------------------------------------------------
+        >>> bg = BaseGeometry()
+        >>> bg.area()
+        Traceback (most recent call last):
+        ...
+        Exception: area() is not implemented
+        """
+        raise Exception("area() is not implemented")
 
-    >>> bg.integer_validator("my_value", 10)
+    def integer_validator(self, name, value):
+        """
+        Define integer_validator
 
-    >>> bg.integer_validator("my_value", -5)
-    Traceback (most recent call last):
-    ...
-    ValueError: <name> must be greater than 0
+        Args:
+            name (str): The name
+            value (int): The integer to be validated.
 
-    >>> bg.integer_validator("my_value", "string")
-    Traceback (most recent call last):
-    ...
-    TypeError: <name> must be an integer
+        Raises:
+            TypeError: If value is not an integer.
+            ValueError: If value is <= 0.
 
----------------------------------------------------------------------
-Case 4: Providing a valid name and value
----------------------------------------------------------------------
+        Examples:
+        >>> bg = BaseGeometry()
+        >>> bg.integer_validator("age", 10)
 
-    >>> bg.integer_validator("age", 25)
+        >>> bg.integer_validator("age", 0)
+        Traceback (most recent call last):
+        ...
+        ValueError: age must be greater than 0
+
+        >>> bg.integer_validator("age", -4)
+        Traceback (most recent call last):
+        ...
+        ValueError: age must be greater than 0
+
+        >>> bg.integer_validator("age", "4")
+        Traceback (most recent call last):
+        ...
+        TypeError: age must be an integer
+
+        >>> bg.integer_validator("age", (4,))
+        Traceback (most recent call last):
+        ...
+        TypeError: age must be an integer
+
+        >>> bg.integer_validator("age", [3])
+        Traceback (most recent call last):
+        ...
+        TypeError: age must be an integer
+
+        >>> bg.integer_validator("age", True)
+        Traceback (most recent call last):
+        ...
+        TypeError: age must be an integer
+
+        >>> bg.integer_validator("age", {3, 4})
+        Traceback (most recent call last):
+        ...
+        TypeError: age must be an integer
+
+        >>> bg.integer_validator("age", None)
+        Traceback (most recent call last):
+        ...
+        TypeError: age must be an integer
+        """
+        if type(value) != int:
+            raise TypeError(f"{name} must be an integer")
+        if value <= 0:
+            raise ValueError(f"{name} must be greater than 0")
