@@ -1,0 +1,41 @@
+=====================================================================
+BaseGeometry class:
+=====================================================================
+
+---------------------------------------------------------------------
+Case 1: Instantiating the class
+---------------------------------------------------------------------
+
+    >>> BaseGeometry = __import__('base_geometry').BaseGeometry
+    >>> bg = BaseGeometry()
+
+---------------------------------------------------------------------
+Case 2: Calling the area method
+---------------------------------------------------------------------
+
+    >>> bg.area()
+    Traceback (most recent call last):
+    ...
+    Exception: area() is not implemented
+
+---------------------------------------------------------------------
+Case 3: Validating integers with integer_validator
+---------------------------------------------------------------------
+
+    >>> bg.integer_validator("my_value", 10)
+
+    >>> bg.integer_validator("my_value", -5)
+    Traceback (most recent call last):
+    ...
+    ValueError: <name> must be greater than 0
+
+    >>> bg.integer_validator("my_value", "string")
+    Traceback (most recent call last):
+    ...
+    TypeError: <name> must be an integer
+
+---------------------------------------------------------------------
+Case 4: Providing a valid name and value
+---------------------------------------------------------------------
+
+    >>> bg.integer_validator("age", 25)
