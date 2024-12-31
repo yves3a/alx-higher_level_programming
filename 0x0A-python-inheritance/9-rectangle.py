@@ -1,29 +1,10 @@
 #!/usr/bin/python3
-"""8-base_geometry module."""
+"""
+A module that inherits from the BaseGeometry class and
+models a Rectangle objects.
+"""
 
-
-class BaseGeometry:
-    """Define an empty class."""
-
-    def area(self):
-        """Define method area."""
-        raise Exception("area() is not implemented")
-
-    def integer_validator(self, name, value):
-        """Define integer_validator.
-
-        Args:
-        name(str): The name
-        value(int): The integer to be valiadated.
-
-        Raises:
-            TypeError: If value is not an integer.
-            ValueError: If value is <= 0.
-        """
-        if type(value) is not int:
-            raise TypeError(f"{name} must be an integer")
-        elif value <= 0:
-            raise ValueError(f"{name} must be greater than 0")
+BaseGeometry = __import__("7-base_geometry").BaseGeometry
 
 
 class Rectangle(BaseGeometry):
@@ -37,14 +18,24 @@ class Rectangle(BaseGeometry):
             width (int): The width of the rectangle.
             height (int): The height of the rectangle.
 
-        Raises:
-            TypeError: If width or height is not an integer.
-            ValueError: If width or height is less than or equal to 0.
+        Args:
+            width (int): The width of the rectangle.
+            height (int): the width of the rectangle.
         """
-        self.__width = width
-        self.__height = height
         self.integer_validator("width", width)
         self.integer_validator("height", height)
+
+        self.__width = width
+        self.__height = height
+
+        def __str__():
+            """
+            Return a string representation of the rectangle.
+
+            Returns:
+                str: The string representation of the rectangle.
+            """
+            return f"[{type(self).__name__}] {self.__width}/{self.__height}"
 
         def area(self):
             """
@@ -53,12 +44,3 @@ class Rectangle(BaseGeometry):
                 int: The calculated area of the rectangle.
             """
             return self.__width * self.__height
-
-        def str():
-            """
-            Return a string representation of the rectangle.
-
-            Returns:
-                str: The string representation of the rectangle.
-            """
-            return f"[Rectangle] {width}/{height}"
