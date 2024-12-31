@@ -28,19 +28,19 @@ class Rectangle(BaseGeometry):
         self.__width = width
         self.__height = height
 
-        def __str__():
-            """
-            Return a string representation of the rectangle.
+    def __str__(self):
+        """
+        Return a string representation of the rectangle.
 
-            Returns:
-                str: The string representation of the rectangle.
-            """
-            return f"[{type(self).__name__}] {self.__width}/{self.__height}"
+        Returns:
+            str: The string representation of the rectangle.
+        """
+        return f"[{type(self).__name__}] {self.__width}/{self.__height}"
 
-        def area(self):
-            """
-            Calculates the area of a rectangle.
-            Returns:
-                int: The calculated area of the rectangle.
-            """
-            return self.__width * self.__height
+    def area(self):
+        """
+        Calculates the area of a rectangle.
+        Returns:
+            int: The calculated area of the rectangle.
+        """
+        return self.__width * self.__height
