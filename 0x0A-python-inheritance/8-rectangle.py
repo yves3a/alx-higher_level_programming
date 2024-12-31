@@ -49,7 +49,8 @@ class Rectangle(BaseGeometry):
 
         Both are validated as positive integers.
         """
+        super().integer_validator("width", width)
         self.__width = width
+        super().integer_validator("height", height)
         self.__height = height
-        self.integer_validator("width", width)
         self.integer_validator("height", height)
