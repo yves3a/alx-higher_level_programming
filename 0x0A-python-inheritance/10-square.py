@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-A module that a square class that inherits from Rectangle
+A module that  represents a square class that inherits from Rectangle
 """
 Rectangle = __import__("9-rectangle").Rectangle
 
