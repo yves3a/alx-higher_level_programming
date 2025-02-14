@@ -32,13 +32,16 @@ JSON
 Learning Objectives
 At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
 
-General
-What is Unit testing and how to implement it in a large project
-How to serialize and deserialize a Class
-How to write and read a JSON file
-What is *args and how to use it
-What is **kwargs and how to use it
-How to handle named arguments in a function
+<h3>General</h3>
+<ul>
+<li>What is Unit testing and how to implement it in a large project</li>
+<li>How to serialize and deserialize a Class</li>
+<li>How to write and read a JSON file</li>
+<li>What is *args and how to use it</li>
+<li>What is **kwargs and how to use it</li>
+<li>How to handle named arguments in a function</li>
+</ul>
+
 Copyright - Plagiarism
 You are tasked to come up with solutions for the tasks below yourself to meet with the above learning objectives.
 You will not be able to meet the objectives of this or any following project by copying and pasting someone else’s work.
@@ -70,10 +73,10 @@ All your tests should be executed by using this command: python3 -m unittest dis
 You can also test file by file by using this command: python3 -m unittest tests/test_models/test_base.py
 We strongly encourage you to work together on test cases so that you don’t miss any edge case
 Tasks
-0. If it's not tested it doesn't work
-mandatory
-Score: 0.0% (Checks completed: 0.0%)
-All your files, classes and methods must be unit tested and be PEP 8 validated.
+
+<b>0. If it's not tested it doesn't work</b>
+
+<p>All your files, classes and methods must be unit tested and be PEP 8 validated.</p><br>
 
 guillaume@ubuntu:~/$ python3 -m unittest discover tests
 ...................................................................................
