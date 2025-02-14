@@ -25,8 +25,8 @@ JSON
 <ul>
 <li><a href="https://yasoob.me/2013/08/04/args-and-kwargs-in-python-explained/">args/kwargs</a></li>
 <li><a href="https://docs.python.org/3/library/json.html">JSON encoder and decoder</a></li>
-<li><a href="https://docs.python.org/3/library/unittest.html">unittest module</a></li>
-<li><a href="https://www.youtube.com/watch?v=1Lfv5tUGsn8">Python test cheatsheet</a></li>
+<li><a href="https://docs.python.org/3.4/library/unittest.html#module-unittest">unittest module</a></li>
+<li><a href="https://www.pythonsheets.com/notes/python-tests.html">Python test cheatsheet</a></li>
 </ul>
 
 Learning Objectives
@@ -98,6 +98,7 @@ File: tests/
    
 1. Base class
 mandatory
+Score: 0.0% (Checks completed: 0.0%)
 Write the first class Base:
 
 Create a folder named models with an empty file __init__.py inside - with this file, the folder will become a Python package
