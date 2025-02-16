@@ -124,17 +124,7 @@ class Rectangle(Base):
 
     def __str__(self):
         """
-        Returns the string representation of the rectangle
-         Updates the Rectangle attributes.
-        Args:
-            *args: Variable length argument list.
-                1st argument represents id
-                2nd argument represents width
-                3rd argument represents height
-                4th argument represents x
-                5th argument represents y
-            **kwargs: Double pointer to a dictionary: key/value pairs
-                Each key represents an attribute to the Rectangle
+        Returns a string representation of the rectangle.
         """
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
             self.id, self.x, self.y, self.width, self.height

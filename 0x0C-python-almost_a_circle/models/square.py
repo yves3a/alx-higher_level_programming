@@ -25,3 +25,29 @@ class Square(Rectangle):
         """String representation of Square"""
         return "[Square] ({}) {}/{} - {}".format(
             self.id, self.x, self.y, self.width)
+
+    def update(self, *args, **kwargs):
+        """
+        Updates the Square attributes.
+        args:
+            *args: Variable length argument list.
+                1st argument represents id
+                2nd argument represents size
+                3rd argument represents x
+                4th argument represents y
+            **kwargs: Double pointer to a dictionary: key/value pairs
+                Each key represents an attribute to the Square
+        """
+        if args:
+            if len(args) >= 1:
+                self.id = args[0]
+            if len(args) >= 2:
+                self.size = args[1]
+            if len(args) >=3:
+                self.x = args[2]
+            if len(args) >= 4:
+                self.y = args[3]
+        elif kwargs:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+
