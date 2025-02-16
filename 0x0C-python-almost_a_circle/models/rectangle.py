@@ -132,7 +132,7 @@ class Rectangle(Base):
 
     def update(self, *args):
         """
-        Updates the rectangle attributes
+        Updates the Rectangle attributes.
         Args:
             *args: Variable length argument list.
                 1st argument represents id
@@ -142,6 +142,6 @@ class Rectangle(Base):
                 5th argument represents y
         """
         attrs = ['id', 'width', 'height', 'x', 'y']
-        for i in range(len(attrs)):
+        for i in range(len(args)):
             if i < len(attrs):
                 setattr(self, attrs[i], args[i])
