@@ -125,14 +125,7 @@ class Rectangle(Base):
     def __str__(self):
         """
         Returns the string representation of the rectangle
-        """
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(
-            self.id, self.x, self.y, self.width, self.height
-        )
-
-    def update(self, *args):
-        """
-        Updates the Rectangle attributes.
+         Updates the Rectangle attributes.
         Args:
             *args: Variable length argument list.
                 1st argument represents id
@@ -140,8 +133,37 @@ class Rectangle(Base):
                 3rd argument represents height
                 4th argument represents x
                 5th argument represents y
+            **kwargs: Double pointer to a dictionary: key/value pairs
+                Each key represents an attribute to the Rectangle
         """
-        attrs = ['id', 'width', 'height', 'x', 'y']
-        for i in range(len(args)):
-            if i < len(attrs):
-                setattr(self, attrs[i], args[i])
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+            self.id, self.x, self.y, self.width, self.height
+        )
+
+    def update(self, *args, **kwargs):
+        """
+         Updates the Rectangle attributes.
+        Args:
+            *args: Variable length argument list.
+                1st argument represents id
+                2nd argument represents width
+                3rd argument represents height
+                4th argument represents x
+                5th argument represents y
+            **kwargs: Double pointer to a dictionary: key/value pairs
+                Each key represents an attribute to the Rectangle
+        """
+        if args:
+            if len(args) >= 1:
+                self.id = args[0]
+            if len(args) >= 2:
+                self.width = args[1]
+            if len(args) >= 3:
+                self.height = args[2]
+            if len(args) >= 4:
+                self.x = args[3]
+            if len(args) >= 5:
+                self.y = args[4]
+        elif kwargs:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
