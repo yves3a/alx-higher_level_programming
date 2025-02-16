@@ -111,10 +111,16 @@ class Rectangle(Base):
 
     def display(self):
         """
-        Prints the rectangle using the '#' character
+        Prints the rectangle using the '#' character,
+        taking x and y coordinates into account
         """
-        for i in range(self.__height):
-            print("#" * self.__width)
+        # Print y offset
+        for i in range(self.y):
+            print()
+
+        # Print each row with x offset
+        for i in range(self.height):
+            print(" " * self.x + "#" * self.width)
 
     def __str__(self):
         """
