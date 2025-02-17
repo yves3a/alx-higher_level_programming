@@ -24,6 +24,21 @@ class Base:
         """
         Return json representation of a list if dictionaries
         """
-        if list_dictionaries is None or len(list_dictionaries) == 0:
+        if list_dictionaries is None or not list_dictionaries:
             return "[]"
         return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """
+        Write the json string representation of the list of objects to a file.
+        """
+        filename = cls.__name__ + ".json"
+        if list_objs is None:
+            list_objs = []
+        
+        # Convert objects to dictionaries first
+        list_dicts = [obj.to_dictionary() for obj in list_objs]
+        
+        with open(filename, "w") as f:
+            f.write(cls.to_json_string(list_dicts))
