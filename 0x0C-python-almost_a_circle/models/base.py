@@ -42,3 +42,17 @@ class Base:
 
         with open(filename, "w") as f:
             f.write(cls.to_json_string(list_dicts))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """
+        Returns a list of json string representation
+        Args:
+            json_string (str): A JSON str representation of a list of dicts.
+        Returns:
+            If json_string is None or empty - an empty list.
+            Otherwise - the Python list represented by json_string.
+        """
+        if json_string is None or not json_string:
+            return []
+        return json.loads(json_string)
