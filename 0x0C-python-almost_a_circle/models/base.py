@@ -3,6 +3,7 @@
 This module contains the base class for the almost a circle project.
 """
 import json
+import csv
 
 
 class Base:
@@ -90,5 +91,55 @@ class Base:
                 json_string = f.read()
                 list_dicts = cls.from_json_string(json_string)
                 return [cls.create(**d) for d in list_dicts]
+        except FileNotFoundError:
+            return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """
+        Serializes list_objs to CSV file
+        """
+        filename = cls.__name__ + ".csv"
+        if list_objs is None:
+            list_objs = []
+
+        with open(filename, 'w', newline='') as f:
+            writer = csv.writer(f)
+            for obj in list_objs:
+                if cls.__name__ == "Rectangle":
+                    writer.writerow([obj.id, obj.width, obj.height, obj.x, obj.y])
+                elif cls.__name__ == "Square":
+                    writer.writerow([obj.id, obj.size, obj.x, obj.y])
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """
+        Deserializes CSV file to list of instances
+        """
+        filename = cls.__name__ + ".csv"
+        try:
+            with open(filename, 'r', newline='') as f:
+                reader = csv.reader(f)
+                instances = []
+                for row in reader:
+                    row = [int(x) for x in row]  # Convert strings to integers
+                    if cls.__name__ == "Rectangle":
+                        dictionary = {
+                            'id': row[0],
+                            'width': row[1],
+                            'height': row[2],
+                            'x': row[3],
+                            'y': row[4]
+                        }
+                    elif cls.__name__ == "Square":
+                        dictionary = {
+                            'id': row[0],
+                            'size': row[1],
+                            'x': row[2],
+                            'y': row[3]
+                        }
+                    instance = cls.create(**dictionary)
+                    instances.append(instance)
+                return instances
         except FileNotFoundError:
             return []
